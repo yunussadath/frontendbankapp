@@ -2,7 +2,7 @@ data binding
 
 -share data inside the component
 
-    1.one way binding (data sharing one direction)
+1.one way binding (data sharing one direction)
 
     ts-component
     html-view
@@ -14,7 +14,57 @@ data binding
 
     1.2 view to component (html -> ts)
 
-        a)event binding -(event_name="function_name()"
-         b)event binding using $event -(event_name)="function_name($event)"
+        a)event binding -(event_name)="function_name()"
+        b)event binding using $event -(event_name)="function_name($event)"
 
          this = used to refer
+
+         c)event binding using template referecing variable - # variable_name
+
+2.Two way binding
+      [(ngModel)]="property name"
+
+     angular routing
+     -------------------------
+
+     -to set path for a component
+
+     {   // set in app-routing.
+        path=value,component:class_name
+     }
+
+     dependency injection
+     --------------------------
+     to share data between two dependent class
+
+     angular services
+     --------------------------
+     to hold reduntant data (duplicated data)
+
+     ng g s service_name
+
+
+    string ne integer lekk convert cheyyan=parseInt()
+
+
+    Angular Directives
+    ----------------------
+
+      to manipulate DOM
+      __________________
+
+    a)component Directives
+
+    b)structural Directives
+
+      1)*ngFor
+      
+      angular form
+      --------------
+      a)template driven form - to design html page (first design html page)
+
+      b)model driven forms - (first design ts file -> html page)
+                  1) reactive formModule
+                  formGroup,array,control
+                    - add avd validations
+                    - import reactive form modules

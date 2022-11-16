@@ -1,21 +1,13 @@
-
-img{
-    width: 80px;
-    border-radius: 40%;
-    border: #c3b2b2 solid;
-
-}
-
-
 .container{
     max-width:350px;
     min-height:500px;
     margin:80px auto;
     padding:40px 30px 30px 30px;
     border-radius: 15px;
-    box-shadow: 13px 13px 20px #211f1f;
+    box-shadow: 13px 13px 20px #080808;
    
 }
+
 .form-control{
 
     border-radius: 30px;
@@ -25,10 +17,5 @@ img{
 button{
     width: 40%;
     border-radius: 100px;
-
+    
 }
-
-
-
-
-

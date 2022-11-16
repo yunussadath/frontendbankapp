@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +17,8 @@ accounts="Enter Your Accno Here";
 
 acno="";  //print 1000
 pswd="";  //print 1000
+  
+ 
 //user defined functions   //4th execute
 
 acnoChange(event:any){
@@ -30,28 +34,55 @@ login(){
   // alert('login clicked');
   var acno=this.acno;
   var pswd=this.pswd;
-  var userDetails=this.userDetails;
-
-  if(acno in userDetails){
-    if(pswd==userDetails[acno]['password']){
-      alert("login successfully");
-    }
-    else{
-      alert("invalid password");
-    }
-  }
-  else{
-    alert("invalid user details");
-  }
+  
+const result=this.ds.login(acno,pswd);
+if(result){
+  alert("Login successfully");
+  this.router.navigateByUrl('dashboard');
 }
 
-userDetails :any={       //object of objects
-  1000:{acno:1000,username:'ajas',password:1000,balance:10000},
-  1001:{acno:1001,username:'ajmal',password:1111,balance:100000},
-  1002:{acno:1002,username:'salma',password:1222,balance:1000},
 }
 
-  constructor() { }    //1st execute
+
+
+//   if(acno in userDetails){
+//     if(pswd==userDetails[acno]['password']){
+//       alert("login successfully");                   
+//       this.router.navigateByUrl('dashboard');           //router to dashboard
+//     }
+//     else{
+//       alert("invalid password");
+//     }
+//   }
+//   else{
+//     alert("invalid user details");
+//   }
+// }
+
+
+// login(a:any,p:any){
+//   // alert('login clicked');
+//   var acno=a.value;
+//   var pswd=p.value;
+//   var userDetails=this.userDetails;
+
+//   if(acno in userDetails){
+//     if(pswd==userDetails[acno]['password']){
+//       alert("login successfully");
+//     }
+//     else{
+//       alert("invalid password");
+//     }
+//   }
+//   else{
+//     alert("invalid user details");
+//   }
+// }
+
+
+//router=variable of login
+//Router=its a class of navigateByUrl
+  constructor(private router:Router,private ds:DataService) { }    //1st execute
    //spl member function , automatically involks when an obj created
 
   ngOnInit(): void {   //2nd execute
